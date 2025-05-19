@@ -79,7 +79,7 @@ const HomePage = () => {
         </h1>
 
         {showIntro && (
-          <p className="text-lg md:text-xl text-gray-700 text-center max-w-xl mx-auto mb-10 italic font-light leading-relaxed drop-shadow-sm mb-10">
+          <p className="text-lg md:text-xl text-gray-700 text-center max-w-xl mx-auto italic font-light leading-relaxed drop-shadow-sm mb-10">
             "Discover, Share, and Inspire. Dive into a world of ideas,
             experiences, and creativity. Whether you're here to write your story
             or explore others’, 'EchoWrite' is your space to connect through
