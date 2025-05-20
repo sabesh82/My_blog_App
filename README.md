@@ -42,7 +42,7 @@ yarn install
 ```bash
 DATABASE_URL="your-mongodb-connection-url"
 JWT_SECRET="your-secret-key"
-NEXT_PUBLIC_API_URL="your baseApi URL"
+NEXT_PUBLIC_API_URL="your-baseApi-url"
 ```
 
 ### 4. Prisma setup
