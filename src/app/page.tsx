@@ -122,7 +122,6 @@ const HomePage = () => {
                 alert("You have been logged out.");
                 router.push("/login");
               }
-              
             }}
             className="fixed bottom-6 left-1/2 transform -translate-x-1/2 text-red-500 hover:text-red-700 transition px-1.5 py-0.5 bg-white border border-red-500 hover:bg-red-300 hover:-translate-y-0.5 rounded-full z-50"
           >

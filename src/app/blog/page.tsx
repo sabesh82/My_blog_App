@@ -90,7 +90,8 @@ export default function BlogPage() {
                 </p>
 
                 <p className="text-sm text-purple-900 mt-2">
-                  Author: {blog.Author?.firstName} {blog.Author?.lastName}<br/>
+                  Author: {blog.Author?.firstName} {blog.Author?.lastName}
+                  <br />
                   Published on: {new Date(blog.createdAt).toLocaleDateString()}
                 </p>
               </div>
