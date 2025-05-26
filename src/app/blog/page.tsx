@@ -85,10 +85,12 @@ export default function BlogPage() {
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">
                   {blog.title}
                 </h3>
-                <p className="text-base leading-relaxed text-gray-600">
+                <p className="text-base leading-relaxed text-gray-600 mb-3">
                   {blog.content}
                 </p>
-                <p className="text-sm text-gray-500 mt-2">
+
+                <p className="text-sm text-purple-900 mt-2">
+                  Author: {blog.Author?.firstName} {blog.Author?.lastName}<br/>
                   Published on: {new Date(blog.createdAt).toLocaleDateString()}
                 </p>
               </div>

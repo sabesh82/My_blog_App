@@ -6,8 +6,17 @@ import { useQuery } from "@tanstack/react-query";
 
 export default function useGetBlogs(params: getBlogParam) {
   const { apiClient } = useApi();
+
+  type BlogWithAuthor = Blog & {
+    Author?: {
+      firstName: string;
+      lastName: string;
+      email: string;
+    };
+  };
+
   const getBlogsFn = async (): Promise<{
-    items: Blog[];
+    items: BlogWithAuthor[];
     count: number;
     search: string;
   }> => {
