@@ -58,16 +58,20 @@ npm run dev
 
 
 ## homePage
-![Screenshot (1762)](https://github.com/user-attachments/assets/c13c9e52-6057-4503-9d99-929c5d921bfe)
+![Screenshot (1769)](https://github.com/user-attachments/assets/5004205a-25bf-4b94-b6df-d7aa3718c974)
+
 
 ## RegisterPage
-![Screenshot (1763)](https://github.com/user-attachments/assets/9500ee20-d351-4649-9783-dae7fce8b2fd)
+![Screenshot (1772)](https://github.com/user-attachments/assets/65eecfa4-afd3-4547-9172-e0c31a6cd03b)
+
 
 ## BlogCreationPage
-![Screenshot (1765)](https://github.com/user-attachments/assets/5e7a02d5-e21b-4302-8adb-92a88aa75440)
+![Screenshot (1771)](https://github.com/user-attachments/assets/36ff1f07-6487-42a7-88e2-11d8fcb9a93c)
 
-##Blogs_Page
-![Screenshot (1764)](https://github.com/user-attachments/assets/5e4f7a96-e5d2-462a-b73e-4b38215e47cc)
+
+## Blogs_Page
+![Screenshot (1770)](https://github.com/user-attachments/assets/c9406609-8013-4392-9da5-3b3d17b2de6f)
+
 
 
 
