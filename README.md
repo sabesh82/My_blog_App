@@ -30,7 +30,7 @@ EchoWrite is a dynamic blog platform where users can create, view, and explore i
 ### 1. Clone the repository
 ```bash
 git clone https://github.com/sabesh82/My_blog_App.git
-cd echowrite
+cd My_blog_App
 ````
 ### 2. Install dependencies
 ```bash
