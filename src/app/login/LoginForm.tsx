@@ -27,7 +27,7 @@ const LoginForm = () => {
   const { apiClient } = useApi();
   return (
     <form
-      onChange={handleSubmit(async (userData) => {
+      onSubmit={handleSubmit(async (userData) => {
         try {
           setIsLoading(true);
 

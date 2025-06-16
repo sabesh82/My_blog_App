@@ -10,8 +10,6 @@ export const useCreateBlog = () => {
   const { apiClient } = useApi();
 
   const createBlogFn = async (values: BlogInput): Promise<Blog> => {
-    const token = Cookie.get(cookieKeys.USER_TOKEN);
-    console.log("TOKEN USED:", token);
     return await apiClient.post("blog", values);
   };
 
