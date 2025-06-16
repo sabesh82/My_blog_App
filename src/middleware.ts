@@ -9,7 +9,7 @@ export async function middleware(request: NextRequest) {
     let isSessionValid = false;
     const url = request.nextUrl.pathname;
 
-    const secret = new TextEncoder().encode(process?.env?.JWT_SECRET!);
+    const secret = new TextEncoder().encode(process.env.JWT_SECRET!);
 
     if (session) {
       const payload = (await jwtVerify(session, secret)).payload;
@@ -24,22 +24,23 @@ export async function middleware(request: NextRequest) {
     ];
 
     if (!isSessionValid && !onlyPublicRoutes.includes(url)) {
-      let url = "/login";
-      url += `?redirect_to=${url}`;
+      let loginUrl = "/login";
+      loginUrl += `?redirect_to=${url}`;
 
-      return NextResponse.redirect(new URL(url, request.url));
+      return NextResponse.redirect(new URL(loginUrl, request.url));
     }
 
     if (isSessionValid && onlyPublicRoutes.includes(url)) {
-      let url = "/";
+      const homeUrl = "/";
 
-      return NextResponse.redirect(new URL(url, request.url));
+      return NextResponse.redirect(new URL(homeUrl, request.url));
     }
 
     if (isSessionValid && !onlyPublicRoutes.includes(url)) {
       return NextResponse.next();
     }
   } catch (error) {
+    console.error(error);
     (await cookies()).delete(cookieKeys.USER_TOKEN);
     return NextResponse.redirect(new URL("/login", request.url));
   }

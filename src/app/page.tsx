@@ -22,7 +22,8 @@ const HomePage = () => {
       if (index > fullText.length) {
         clearInterval(interval);
         setTimeout(() => {
-          setShowButtons(true), setShowIntro(true);
+          setShowButtons(true);
+          setShowIntro(true);
         }, 1000);
       }
     }, 100);
@@ -80,10 +81,10 @@ const HomePage = () => {
 
         {showIntro && (
           <p className="text-lg md:text-xl text-gray-700 text-center max-w-xl mx-auto italic font-light leading-relaxed drop-shadow-sm mb-10">
-            "Discover, Share, and Inspire. Dive into a world of ideas,
-            experiences, and creativity. Whether you're here to write your story
-            or explore others’, 'EchoWrite' is your space to connect through
-            words."
+            &ldquo;Discover, Share, and Inspire. Dive into a world of ideas,
+            experiences, and creativity. Whether you&rsquo;re here to write your
+            story or explore others&rsquo;, &lsquo;EchoWrite&rsquo; is your
+            space to connect through words.&rdquo;
           </p>
         )}
 

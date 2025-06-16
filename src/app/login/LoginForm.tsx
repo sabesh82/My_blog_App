@@ -14,7 +14,6 @@ const LoginForm = () => {
     register,
     handleSubmit,
     reset,
-    setError,
     formState: { errors },
   } = useForm<UserLoginInput>({
     mode: "onChange",

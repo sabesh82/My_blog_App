@@ -5,7 +5,7 @@ type SearchParams = {
   search?: string;
 };
 
-type SearchSchema = ZodType<SearchParams, any, any>;
+type SearchSchema = ZodType<SearchParams>;
 
 const defaultSearchSchema = z.object({
   search: z.string().optional(),

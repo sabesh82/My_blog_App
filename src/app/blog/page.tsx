@@ -2,9 +2,8 @@
 
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
-import useGetBlogs from "@/api-clients/blog/useGetBlogs"; // Adjust path if needed
+import useGetBlogs from "@/api-clients/blog/useGetBlogs";
 import { useDeleteBlog } from "@/api-clients/blog/useDeleteBlog";
-import Link from "next/link";
 
 export default function BlogPage() {
   const router = useRouter();
@@ -22,7 +21,7 @@ export default function BlogPage() {
       const params = new URLSearchParams(searchParams.toString());
       params.set("search", searchInput);
       params.set("page", "1"); // Reset to first page on new search
-      router.push(`/blog?${params.toString()}`);
+      router.replace(`/blog?${params.toString()}`);
     }, 500);
 
     return () => clearTimeout(timer);

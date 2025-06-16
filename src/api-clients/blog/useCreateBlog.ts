@@ -1,10 +1,8 @@
 import { BlogInput } from "@/app/api/blog/types";
 import queryClient from "@/app/api/helpers/QueryClient";
-import { cookieKeys } from "@/config/cookies.config";
 import { useApi } from "@/providers/apiProvider";
 import { Blog } from "@prisma/client";
 import { useMutation } from "@tanstack/react-query";
-import Cookie from "js-cookie";
 
 export const useCreateBlog = () => {
   const { apiClient } = useApi();

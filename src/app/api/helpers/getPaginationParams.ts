@@ -6,7 +6,7 @@ type PaginationParams = {
   size: number;
 };
 
-type PaginationSchema = ZodType<PaginationParams, any, any>;
+type PaginationSchema = ZodType<PaginationParams>;
 
 const defaultPaginationSchema = z.object({
   page: z

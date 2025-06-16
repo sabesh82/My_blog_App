@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { BlogInput } from "../../api/blog/types";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -7,14 +7,11 @@ import { BlogSchema } from "../../api/blog/blog.Schema";
 import { useCreateBlog } from "@/api-clients/blog/useCreateBlog";
 import { AxiosError } from "axios";
 import { useRouter } from "next/navigation";
-import { useApi } from "@/providers/apiProvider";
 
 const BlogForm = () => {
   const {
     register,
-    reset,
     handleSubmit,
-    setError,
     formState: { errors },
   } = useForm<BlogInput>({
     mode: "onChange",
@@ -22,7 +19,6 @@ const BlogForm = () => {
     shouldFocusError: true,
   });
 
-  const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
 
   const {
@@ -42,7 +38,7 @@ const BlogForm = () => {
   return (
     <form
       onSubmit={handleSubmit(async (values) => {
-        const newBlog = await createBlog(values);
+        await createBlog(values);
 
         router.push("/blog");
       })}
@@ -135,10 +131,10 @@ const BlogForm = () => {
 
         <button
           type="submit"
-          disabled={isLoading}
+          disabled={isCreateBlogLoading}
           className="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold text-lg py-3 rounded-xl transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          {isLoading ? "Creating..." : "Create"}
+          {isCreateBlogLoading ? "Creating..." : "Create"}
         </button>
       </div>
     </form>

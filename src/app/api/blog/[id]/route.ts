@@ -2,14 +2,14 @@ import { NextRequest, NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
 import privateRoute from "@/app/api/helpers/privateRoute";
 
-//for deleting blog
+// for deleting blog
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
-  return privateRoute(request, async (decodedToken) => {
-    const blogId = params.id;
+  const { id: blogId } = await params;
 
+  return privateRoute(request, async (decodedToken) => {
     const blog = await prisma.blog.findUnique({ where: { id: blogId } });
 
     if (!blog) {
@@ -44,13 +44,14 @@ export async function DELETE(
   });
 }
 
-//for edit blog
+// for edit blog
 export async function PATCH(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
+  const { id: blogId } = await params;
+
   return privateRoute(request, async (user) => {
-    const blogId = params.id;
     const body = await request.json();
 
     const blog = await prisma.blog.findUnique({ where: { id: blogId } });

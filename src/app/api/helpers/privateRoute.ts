@@ -24,10 +24,15 @@ export default async function privateRoute(
       );
     }
 
-    Jwt.verify(token, process?.env?.JWT_SECRET!);
+    const secret = process.env.JWT_SECRET;
+    if (!secret) {
+      throw new Error("JWT_SECRET is not defined");
+    }
+
+    Jwt.verify(token, secret);
     const decodedToken = Jwt.decode(token) as JwtPayload & { id: string };
 
-    return cb(decodedToken, token);
+    return await cb(decodedToken, token);
   } catch (error) {
     return handleError(error, "authorization failed");
   }
